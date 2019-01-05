@@ -2,12 +2,12 @@ package Parser
 
 import "time"
 
-type JsonParser struct {
+type Parser struct {
 	filename string
 	parseDate time.Time
 	cachedFile bool
 }
 
-func (parser *JsonParser) parse(filePath string) {
+func (parser *Parser) parse(filePath string) {
 
 }

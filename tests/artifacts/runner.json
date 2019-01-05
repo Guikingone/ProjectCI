@@ -1,0 +1,9 @@
+{
+  "steps": [
+    {
+      "name": "mysql",
+      "image": "alpine",
+      "command": "default"
+    }
+  ]
+}
