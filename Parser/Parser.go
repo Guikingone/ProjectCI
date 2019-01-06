@@ -6,13 +6,16 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"time"
 )
 
-type JsonParser struct {
-	running bool
+type Parser struct {
+	filename string
+	parseDate time.Time
+	cachedFile bool
 }
 
-func (parser *JsonParser) parse(configFilePath string) {
+func parseJSON(configFilePath string) {
 	file, err := os.Open(configFilePath)
 
 	if err != nil {
@@ -28,6 +31,5 @@ func (parser *JsonParser) parse(configFilePath string) {
 	var config Configuration.Configuration
 
 	json.Unmarshal(byteValue, &config)
-
 
 }

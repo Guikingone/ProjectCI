@@ -1,32 +1,23 @@
 package Configuration
 
 import (
-	"github.com/google/uuid"
+	"go/types"
 )
 
 type Configuration struct {
-	identifier uuid.UUID
-	fileName string
-	changed bool
-	valid bool
+	Version string      `json:"version"`
+	Steps   types.Array `json:"steps"`
+	Caches  types.Array `json:"caches"`
 }
 
-func (config *Configuration) getIdentifier() uuid.UUID {
-	return config.identifier
+func (config *Configuration) getVersion() string {
+	return config.Version
 }
 
-func (config *Configuration) getIdentifierAsString() string {
-	return config.identifier.String()
+func (config *Configuration) getSteps() types.Array {
+	return config.Steps
 }
 
-func (config *Configuration) getFileName() string {
-	return config.fileName
-}
-
-func (config *Configuration) hasChanged() bool {
-	return config.changed
-}
-
-func (config *Configuration) isValid() bool {
-	return config.valid
+func (config *Configuration) getCaches() types.Array {
+	return config.Caches
 }

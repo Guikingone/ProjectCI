@@ -1,11 +1,11 @@
 package Configuration
 
-import "github.com/google/uuid"
+import (
+	"go/types"
+)
 
 type ConfigurationInterface interface {
-	getIdentifier() uuid.UUID
-	getIdentifierAsString() string
-	getFileName() string
-	hasChanged() bool
-	isValid() bool
+	getVersion() string
+	getSteps() types.Array
+	getCaches() types.Array
 }
