@@ -16,4 +16,10 @@ type BuildInterface interface {
 	isValid() bool
 	isRunning() bool
 	getSteps() types.Array
+	getRepositoryName() string
+	getRepositoryBranch() string
+	getRepositoryUrl() string
+	getRepositoryLanguage() string
+	getRepositoryLogName() string
+	getRepositoryLogFilePath() string
 }
